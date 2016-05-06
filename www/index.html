@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="starter" ng-controller="HomeCtrl">
+
+    <ion-pane>
+
+      <ion-header-bar class="bar-positive">
+        <h1 class="title">Weather App</h1>        
+      </ion-header-bar>
+
+
+
+
+      <ion-content>
+
+        <div class="list list-inset">
+          <p><br>
+          <div class="item item-divider">
+            <h2>
+              Please select your city
+            </h2>            
+          </div>
+          </p><p>          
+          <div class="padding-vertical"></div>
+
+
+
+
+          <!-- Mitells folgender Radio-Liste lässt sich der Stadt-Auswahl treffen -->
+
+          <ion-list>
+            <ion-radio ng-model="choice" ng-value="&apos;Vienna&apos;">Vienna</ion-radio>
+            <ion-radio ng-model="choice" ng-value="&apos;Barcelona&apos;">Barcelona</ion-radio>
+            <ion-radio ng-model="choice" ng-value="&apos;Rome&apos;">Rome</ion-radio>
+            <ion-radio ng-model="choice" ng-value="&apos;Copenhagen&apos;">Copenhagen</ion-radio>
+          </ion-list>
+          <div class="padding-vertical"></div>
+
+
+
+
+          <!-- Button zum Abruf der Hauptfunktion -->
+          <button class="button button-positive" ng-disabled="!choice" ng-click="submitCity(choice)"> continue </button>
+        </p></div>
+
+
+
+
+          <!-- Hiermit wird je nach Temperatur die Kleid-Empfehlung + Ausgaben ausgegeben -->
+          <div class="list card">
+            <div ng-if="temp >= 0 && temp <= 10"> 
+              <center>
+                <h2> The temperature and humidity in {{choice}} are </h2> 
+                <h1> {{temp}}°C &nbsp;& &nbsp;{{humidity}}% ,
+                </h1>
+                <h2> So we recommend wearing a jacket and a scarf</h2> 
+              </center>
+            </div><br>
+
+            <div ng-if="temp >= 10 && temp <= 20"> 
+              <center>
+                <h2> The temperature and humidity in {{choice}} are </h2> 
+                <h1> {{temp}}°C &nbsp;& &nbsp;{{humidity}}% , 
+                </h1>
+                <h2> so we recommend wearing a sweater</h2> 
+              </center>
+            </div><br>
+
+            <div ng-if="temp >= 20 && temp <= 30"> 
+              <center>
+                <h2> The temperature and humidity in {{choice}} are </h2> 
+                <h1> {{temp}}°C &nbsp;& &nbsp;{{humidity}}% ,
+                </h1>
+                <h2> it's hot, so with a shirt you will be fine</h2> 
+              </center>
+            </div>
+
+          </div><br>
+
+
+      </ion-content>
+
+
+      <!-- Die Tabs-Buttons haben leider nicht funktioniert trozt lange Auseinandersetzung -->
+
+<!--         <div class="tabs-striped tabs-color-assertive tabs-bottom">
+            <div class="tabs">
+              <a class="tab-item active" href="#/tab/index">
+                <i class="icon ion-home"></i>
+                Home
+              </a>
+              <a class="tab-item" href="#/tab/tab-cities">
+                <i class="icon ion-earth"></i>
+                cities
+              </a>
+            </div>
+        </div> -->
+
+
+    </ion-pane>    
+  </body>
+</html>
