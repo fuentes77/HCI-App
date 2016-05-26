@@ -4,10 +4,8 @@ angular.module('starter.controllers', [])
 
 .controller('LoginCtrl', function($scope, LoginService, $ionicPopup, $state) {
     $scope.data = {};
-    console.log($scope.benutzer);
  
     $scope.login = function() {
-          console.log($scope.benutzer);
         LoginService.loginUser($scope.data.benutzer, $scope.data.passwort).success(function(data) {
             $state.go('tab.dash');
         }).error(function(data) {
