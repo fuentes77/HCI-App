@@ -7,7 +7,13 @@ angular.module('starter.controllers', [])
  
     $scope.login = function() {
         LoginService.loginUser($scope.data.benutzer, $scope.data.passwort).success(function(data) {
+
+          if ($scope.data.benutzer == 'lehrer'){
             $state.go('tab.dash');
+          }
+          // if ($scope.data.benutzer == 'schueler'){
+          //   $state.go('tab.dash');
+          // }
         }).error(function(data) {
             var alertPopup = $ionicPopup.alert({
                 title: 'Login failed!',
