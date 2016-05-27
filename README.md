@@ -16,5 +16,7 @@ Hallo zusammen. Wichtige Hinweise zur korrekter Ausfuehrung des Projektes.
  Erstellte Nutzer:
 
   1- benutzername = 'lehrer', passwort = 'secret'.
+  
   2- benutzername = 'schueler', passwort = 'schueler'.
+  
   3- benutzername = 'user', passwort = 'secret'.
