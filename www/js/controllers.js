@@ -11,9 +11,9 @@ angular.module('starter.controllers', [])
           if ($scope.data.benutzer == 'lehrer'){
             $state.go('tab.dash');
           }
-          // if ($scope.data.benutzer == 'schueler'){
-          //   $state.go('tab.dash');
-          // }
+          if ($scope.data.benutzer == 'schueler'){
+            $state.go('tab.dashSchueler');
+          }
         }).error(function(data) {
             var alertPopup = $ionicPopup.alert({
                 title: 'Login failed!',
