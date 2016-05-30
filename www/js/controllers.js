@@ -26,7 +26,22 @@ angular.module('starter.controllers', [])
 
 
 
-.controller('DashCtrl', function($scope) {})
+.controller('DashCtrl', function($scope) {
+      $scope.dash = {};
+      $scope.dash.profTab = true;
+      $scope.dash.studTab = false;
+      console.log("dash.studTab")
+})
+
+
+.controller('DashStudCtrl', function($scope) {
+      $scope.dash = {};
+      // $scope.dash.studTab = true;
+      $scope.dash.profTab = true;
+      console.log("hola")
+})
+
+
 
 .controller('ChatsCtrl', function($scope, Chats) {
 
