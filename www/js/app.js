@@ -43,12 +43,30 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       nicht_regist: "Not registered?",
       goodbye_message: "Goodbye",
       regist: "Registration",
-      login: "login"
+      login: "login",
+      activities: "Activities",
+      edit_c: "Edit course",
+      ausp_auf: "Pronounce & record",
+      friends: "Friends",
+      music: "Music",
+      vok_t: "Vocabulary training",
+      gram_t: "Grammatic training",
+      categ: "Categories"
+      
   });
   $translateProvider.translations('de', {
       nicht_regist: "Nicht registriert?",
       regist: "Registrierung",
-      login: "Einloggen"
+      login: "Einloggen",
+      activities: "Aktivitäten",
+      edit_c: "Kurs bearbeiten",
+      ausp_auf: "Ausprechen und aufnehmen",
+      friends: "Freunde",
+      music: "Musik",
+      vok_t: "Vokabeln-Trainer",
+      gram_t: "Grammatik üben",
+      categ: "Kategorien"
+      
   });
   $translateProvider.preferredLanguage("en");
   $translateProvider.fallbackLanguage("en");
