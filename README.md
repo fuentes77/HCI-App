@@ -20,6 +20,9 @@ Hallo zusammen. Wichtige Hinweise zur korrekter Ausfuehrung des Projektes.
 - ionic run adroid
 
 
+
+
+
 ##Login auf der App
 
  Erstellte Nutzer:
