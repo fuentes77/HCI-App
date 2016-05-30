@@ -10,4 +10,12 @@
 .larger {
     font-size: 25px;
 }
+.element.ng-hide{
+  display:none;
+}
+
+.dashstudTab.ng-hide{
+  display:none;
+}
+
 </style>

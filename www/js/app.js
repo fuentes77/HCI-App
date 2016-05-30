@@ -51,7 +51,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       music: "Music",
       vok_t: "Vocabulary training",
       gram_t: "Grammatic training",
-      categ: "Categories"
+      categ: "Categories",
+      continue: "Continue course"
       
   });
   $translateProvider.translations('de', {
@@ -65,7 +66,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       music: "Musik",
       vok_t: "Vokabeln-Trainer",
       gram_t: "Grammatik üben",
-      categ: "Kategorien"
+      categ: "Kategorien",
+      continue: "Continue course"
       
   });
   $translateProvider.preferredLanguage("en");
