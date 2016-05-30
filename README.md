@@ -2,6 +2,7 @@
 
 Hallo zusammen. Wichtige Hinweise zur korrekter Ausfuehrung des Projektes. 
 
+
 ##Git
 
 1- git clone https://github.com/fuentes77/HCI-App.git
@@ -10,6 +11,17 @@ Hallo zusammen. Wichtige Hinweise zur korrekter Ausfuehrung des Projektes.
 -  git add .
 - git commit -a  (da bitte ein Comment hinterlassen)
 - git push
+
+
+## Mit Emulator testen (davor muss die SDK installiert werden)
+
+- npm install -g cordova
+- cordova platform add android
+- ionic run adroid
+
+
+
+
 
 ##Login auf der App
 
