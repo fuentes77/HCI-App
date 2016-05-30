@@ -43,8 +43,8 @@ angular.module('starter.controllers', [])
 
 .controller('tabCtrl', function($scope) {
       $scope.dash = {};
-      $scope.dash.studTab = false;
-      $scope.dash.profTab = true;
+      $scope.dash.st = true;
+      $scope.dash.profTab = false;
 })
 
 
