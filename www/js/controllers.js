@@ -26,7 +26,7 @@ angular.module('starter.controllers', [])
 
 
 
-.controller('DashCtrl', function($scope) {
+.controller('DashCtrl', function($scope, stateParams) {
       $scope.dash = {};
       // $scope.dash.profTab = false;
       // $scope.dash.studTab = false;  
@@ -34,10 +34,30 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('DashStudCtrl', function($scope) {
-      $scope.dash = {};
+.controller('DashStudCtrl', function($scope,$stateParams ,$rootScope ) {
+    $scope.dash = {};
+   //  var i = stateParams.dashSchuelerId;
+  //   $scope.title ="";
+
+   //   for( var i= 0; i<$scope.DashStuddetailCtrl.length; i++)
+  //        if(id == $scope.DashStuddetailCtrl[i].id)
+  //          title =$rootScope.DashStuddetailCtrl[i].title;
+
       // $scope.dash.studTab = true;
       // $scope.dash.profTab = true;
+      console.log("hola")
+})
+
+
+.controller('DashStuddetailCtrl', function($scope ,$stateParams) {
+     //$rootScope.itemtitel =      [{ title:'Chat-Box (Tandem)', id:1 }
+     //                        { title:'translate', id:2 },
+     //                       { title:'friends', id:3 },
+     //                      { title:' Muzik', id:4 }
+       //                ];
+
+      // $scope.dash.studTab = true;
+      //$scope.dash.profTab = true;
       console.log("hola")
 })
 

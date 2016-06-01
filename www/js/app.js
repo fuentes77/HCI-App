@@ -100,7 +100,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   })
 
   .state('tab.dashSchueler', {
-    url: '/dashSchueler',
+    url: '/dashSchueler/:dashSchuelerId',
     views: {
       'tab-dashSchueler': {
         templateUrl: 'templates/tab-dashSchueler.html',
@@ -155,7 +155,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         templateUrl: 'templates/login.html',
         controller: 'LoginCtrl'      
 
-  }) ;
+  })
+
+.state('tab.dashSchueler-detail', {
+    url: '/dashSchueler-detail',
+    views: {
+      'tab-dashSchueler-detail': {
+        templateUrl: 'templates/dashSchueler-detail.html',
+        controller: 'DashStudDetailCtrl'
+      }
+    }
+  })
+
+   ;
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
