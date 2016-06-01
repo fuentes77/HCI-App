@@ -3,68 +3,63 @@ angular.module('starter.controllers', [])
 
 
 .controller('LoginCtrl', function($scope, LoginService, $ionicPopup, $state) {
-    $scope.data = {};
- 
-    $scope.login = function() {
-        LoginService.loginUser($scope.data.benutzer, $scope.data.passwort).success(function(data) {
+  $scope.data = {};
 
-          if ($scope.data.benutzer == 'lehrer'){
-            $state.go('tab.dash');
-          }
-          if ($scope.data.benutzer == 'schueler'){
-            $state.go('tab.dashSchueler');
-          }
-        }).error(function(data) {
-            var alertPopup = $ionicPopup.alert({
-                title: 'Login failed!',
-                template: 'Please check your credentials!'
-            });
-        });
+  $scope.login = function() {
+      LoginService.loginUser($scope.data.benutzer, $scope.data.passwort).success(function(data) {
+
+        if ($scope.data.benutzer == 'lehrer'){
+          $state.go('tab.dash');
+        }
+        if ($scope.data.benutzer == 'schueler'){
+          $state.go('tab.dashSchueler');
+        }
+      }).error(function(data) {
+          var alertPopup = $ionicPopup.alert({
+              title: 'Login failed!',
+              template: 'Please check your credentials!'
+          });
+      });
+  }
+})
+
+.controller('AbstractCtrl', function($scope) {
+  $scope.dash = {};
+  $scope.prof = "ng-show";
+  $scope.student = "ng-show";
+
+  $scope.hideView = function(view) {
+    if (view == "prof") {
+      $scope.prof = "ng-hide";
+      $scope.student = "ng-show";
     }
+    else if (view == "student") {
+      $scope.prof = "ng-show";
+      $scope.student = "ng-hide";
+    }
+  };
+})
+
+.controller('DashCtrl', function($scope, $stateParams) {
+  $scope.dash = {};
+  $scope.hideView("student");
 })
 
 
-
-
-.controller('DashCtrl', function($scope, stateParams) {
-      $scope.dash = {};
-      // $scope.dash.profTab = false;
-      // $scope.dash.studTab = false;  
-      console.log("dash.studTab")
-})
-
-
-.controller('DashStudCtrl', function($scope,$stateParams ,$rootScope ) {
-    $scope.dash = {};
-   //  var i = stateParams.dashSchuelerId;
-  //   $scope.title ="";
-
-   //   for( var i= 0; i<$scope.DashStuddetailCtrl.length; i++)
-  //        if(id == $scope.DashStuddetailCtrl[i].id)
-  //          title =$rootScope.DashStuddetailCtrl[i].title;
-
-      // $scope.dash.studTab = true;
-      // $scope.dash.profTab = true;
-      console.log("hola")
+.controller('DashStudCtrl', function($scope, $stateParams, $rootScope, $controller) {
+  $scope.dash = {};
+  $scope.hideView("prof");
 })
 
 
 .controller('DashStuddetailCtrl', function($scope ,$stateParams) {
-     //$rootScope.itemtitel =      [{ title:'Chat-Box (Tandem)', id:1 }
-     //                        { title:'translate', id:2 },
-     //                       { title:'friends', id:3 },
-     //                      { title:' Muzik', id:4 }
-       //                ];
-
-      // $scope.dash.studTab = true;
-      //$scope.dash.profTab = true;
-      console.log("hola")
+  console.log("hola")
 })
 
 .controller('tabCtrl', function($scope) {
-      $scope.dash = {};
-      $scope.dash.st = true;
-      $scope.dash.profTab = false;
+  $scope.dash = {};
+  $scope.dash.st = true;
+  $scope.dash.profTab = false;
 })
 
 
