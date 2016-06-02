@@ -1,0 +1,75 @@
+<ion-view view-title="Grammatik - Adjektiv">
+
+  <ion-content class="padding">
+
+    <p style="margin-top: 100px;" </p>
+
+    <!-- <center><img src="img/musical_note.jpg"/></center> -->
+
+		<div class="list">
+
+		  <!-- regular section -->
+		  <div class="item item-divider item-positive">
+		    Regulär
+		  </div>
+
+	    <div class = "row">
+
+	      <div class = "col">
+	        <div class="list">
+          	<div class="item"><b>Positiv</b></div>	        
+	          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in regularContainer">{{x.positiv}}</div>
+	        </div>
+	      </div>
+
+	      <div class = "col">
+	        <div class="list">
+            <div class="item"><b>Komparativ</b></div>
+	          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in regularContainer">{{x.komparativ}}</div>
+	        </div>
+	      </div>
+
+	      <div class = "col">
+	        <div class="list">
+	          <div class="item"><b>Superlativ</b></div>
+	          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in regularContainer">{{x.superlativ}}</div>
+	        </div>
+	      </div>
+
+	    </div>	
+
+	    <!-- irregular section -->
+		  <div class="item item-divider item-positive">
+		    Irregulär
+		  </div>	  
+
+	    <div class = "row">
+
+	      <div class = "col">
+	        <div class="list">
+          	<div class="item"><b>Positiv</b></div>	        
+	          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in irregularContainer">{{x.positiv}}</div>
+	        </div>
+	      </div>
+
+	      <div class = "col">
+	        <div class="list">
+            <div class="item"><b>Komparativ</b></div>
+	          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in irregularContainer">{{x.komparativ}}</div>
+	        </div>
+	      </div>
+
+	      <div class = "col">
+	        <div class="list">
+	          <div class="item"><b>Superlativ</b></div>
+	          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in irregularContainer">{{x.superlativ}}</div>
+	        </div>
+	      </div>
+
+	    </div>			  		    
+
+		</div>
+
+  </ion-content>
+
+</ion-view>

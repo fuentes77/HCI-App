@@ -120,6 +120,66 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   }) 
 
+  .state('tab.musik', {
+    url: '/musik',
+    views: {
+      'tab-dashSchueler': {
+        templateUrl: 'templates/musik.html',
+        controller: 'MusikCtrl'
+      }
+    }
+  })  
+
+  .state('tab.video', {
+    url: '/video',
+    views: {
+      'tab-dashSchueler': {
+        templateUrl: 'templates/video.html',
+        controller: 'VideoCtrl'
+      }
+    }
+  })   
+
+  .state('tab.grammarHome', {
+    url: '/grammarHome',
+    views: {
+      'tab-dashSchueler': {
+        templateUrl: 'templates/tab-grammatik.html',
+        controller: 'GrammarHomeCtrl'
+      }
+    }
+  })    
+
+  .state('tab.grammarNoun', {
+    url: '/grammarNoun',
+    views: {
+      'tab-dashSchueler': {
+        templateUrl: 'templates/grammarNoun.html',
+        controller: 'GrammarNounCtrl'
+      }
+    }
+  })    
+
+  .state('tab.grammarVerb', {
+    url: '/grammarVerb',
+    views: {
+      'tab-dashSchueler': {
+        templateUrl: 'templates/grammarVerb.html',
+        controller: 'GrammarVerbCtrl'
+      }
+    }
+  })     
+
+  .state('tab.grammarAdjektiv', {
+    url: '/grammarAdjektiv',
+    views: {
+      'tab-dashSchueler': {
+        templateUrl: 'templates/grammarAdjektiv.html',
+        controller: 'GrammarAdjektivCtrl'
+      }
+    }
+  })       
+
   .state('tab.chats', {
       url: '/chats',
       views: {

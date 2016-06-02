@@ -1,0 +1,105 @@
+<ion-view view-title="Grammatik - Nomen">
+
+  <ion-content class="padding">
+
+    <p style="margin-top: 100px;" </p>
+
+    <!-- <center><img src="img/musical_note.jpg"/></center> -->
+
+		<div class="list">
+
+		  <!-- masculine section -->
+		  <div class="item item-divider item-positive">
+		    Maskulin
+		  </div>
+
+	    <div class = "row">
+
+	      <div class = "col">
+	        <div class="list">
+          	<div class="item"><b>Fall</b></div>	        
+	          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in maskulinContainer">{{x.case}}</div>
+	        </div>
+	      </div>
+
+	      <div class = "col">
+	        <div class="list">
+            <div class="item"><b>Singular</b></div>
+	          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in maskulinContainer">{{x.singular}}</div>
+	        </div>
+	      </div>
+
+	      <div class = "col">
+	        <div class="list">
+	          <div class="item"><b>Plural</b></div>
+	          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in maskulinContainer">{{x.plural}}</div>
+	        </div>
+	      </div>
+
+	    </div>	
+
+	    <!-- feminin section -->
+		  <div class="item item-divider item-positive">
+		    Feminin
+		  </div>	  
+
+	    <div class = "row">
+
+	      <div class = "col">
+	        <div class="list">
+          	<div class="item"><b>Fall</b></div>	        
+	          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in femininContainer">{{x.case}}</div>
+	        </div>
+	      </div>
+
+	      <div class = "col">
+	        <div class="list">
+            <div class="item"><b>Singular</b></div>
+	          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in femininContainer">{{x.singular}}</div>
+	        </div>
+	      </div>
+
+	      <div class = "col">
+	        <div class="list">
+	          <div class="item"><b>Plural</b></div>
+	          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in femininContainer">{{x.plural}}</div>
+	        </div>
+	      </div>
+
+	    </div>			  
+
+	    <!-- neutrum section -->
+		  <div class="item item-divider item-positive">
+		    Neutrum
+		  </div>		
+
+	    <div class = "row">
+
+	      <div class = "col">
+	        <div class="list">
+          	<div class="item"><b>Fall</b></div>	        
+	          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in neutrumContainer">{{x.case}}</div>
+	        </div>
+	      </div>
+
+	      <div class = "col">
+	        <div class="list">
+            <div class="item"><b>Singular</b></div>
+	          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in neutrumContainer">{{x.singular}}</div>
+	        </div>
+	      </div>
+
+	      <div class = "col">
+	        <div class="list">
+	          <div class="item"><b>Plural</b></div>
+	          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in neutrumContainer">{{x.plural}}</div>
+	        </div>
+	      </div>
+
+	    </div>			    
+
+		</div>
+
+  </ion-content>
+
+</ion-view>

@@ -71,7 +71,7 @@ angular.module('starter.controllers', [])
   $scope.animals = false;
   $scope.arrowSmallTalk = "ion-chevron-right"; 
   $scope.arrowAnimal = "ion-chevron-right"; 
-  
+
   $scope.changeArrow = function (section, value) {
     switch (section) {
       case "smallTalk": {
@@ -93,6 +93,101 @@ angular.module('starter.controllers', [])
     }
 
   }; 
+})
+
+.controller('MusikCtrl', function($scope, $stateParams, $rootScope, $controller) {
+  $scope.dash = {};
+
+  $scope.langLearnCont = [
+        {src:'img/ABC.png', name:'German for Beginners', title:'Alphabet and Phonetics'},
+        {src:'img/numbers.jpg', name:'LEARN GERMAN', title: 'NUMBERS'}
+  ];
+
+  $scope.entertainCont = [
+        {src:'img/falco.jpg', name:'Falco', title:'Wiener Blut'},
+        {src:'img/kassette.jpg', name:'HoerTalk', title:'Centralia'}
+  ];  
+})
+
+.controller('VideoCtrl', function($scope, $stateParams, $rootScope, $controller) {
+  $scope.dash = {};
+
+  $scope.langLearnCont = [
+        {src:'img/lesson1.jpg', name:'Learn German', title:'Lesson 1'},
+        {src:'img/prepositions.jpg', name:'Easy German Grammar', title: 'Prepositions'}
+  ];
+
+  $scope.entertainCont = [
+        {src:'img/loriot.jpg', name:'Loriot', title:'Das Bild hängt schief'},
+        {src:'img/goethe_institut.png', name:'BBC and Goethe Institute', title:'Susanne - for German learners'}
+  ];    
+})
+
+.controller('GrammarHomeCtrl', function($scope, $stateParams, $rootScope, $controller) {
+  $scope.dash = {};
+})
+
+.controller('GrammarNounCtrl', function($scope, $stateParams, $rootScope, $controller) {
+  $scope.dash = {};
+
+  $scope.maskulinContainer = [
+        {case:'Nominativ', singular:'der Mann', plural:'die Männer'},
+        {case:'Genitiv', singular:'des Mannes', plural:'der Männer'},
+        {case:'Dativ', singular:'dem Mann', plural:'den Männern'},
+        {case:'Akkusativ', singular:'den Mann', plural:'die Männer'}
+  ];
+
+  $scope.femininContainer = [
+        {case:'Nominativ', singular:'die Frau', plural:'die Frauen'},
+        {case:'Genitiv', singular:'der Frau', plural:'der Frauen'},
+        {case:'Dativ', singular:'der Frau', plural:'den Frauen'},
+        {case:'Akkusativ', singular:'die Frau', plural:'die Frauen'}        
+  ];  
+
+  $scope.neutrumContainer = [
+        {case:'Nominativ', singular:'das Kind', plural:'die Kinder'},
+        {case:'Genitiv', singular:'des Kindes', plural:'der Kinder'},
+        {case:'Dativ', singular:'dem Kind', plural:'den Kindern'},
+        {case:'Akkusativ', singular:'das Kind', plural:'die Kinder'}        
+  ];    
+})
+
+.controller('GrammarVerbCtrl', function($scope, $stateParams, $rootScope, $controller) {
+  $scope.dash = {};
+
+  $scope.regularContainer = [
+        {person:'ich', indikativ:'winke', konjunktiv:'winkte'},
+        {person:'du', indikativ:'winkst', konjunktiv:'winktest'},
+        {person:'er/sie/es', indikativ:'winkt', konjunktiv:'winkte'},
+        {person:'wir', indikativ:'winken', konjunktiv:'winkten'},
+        {person:'ihr', indikativ:'winkt', konjunktiv:'winktet'},        
+        {person:'sie', indikativ:'winken', konjunktiv:'winkten'}
+  ];
+
+  $scope.irregularContainer = [
+        {person:'ich', indikativ:'gehe', konjunktiv:'ginge'},
+        {person:'du', indikativ:'gehst', konjunktiv:'gingest'},
+        {person:'er/sie/es', indikativ:'geht', konjunktiv:'ginge'},
+        {person:'wir', indikativ:'gehen', konjunktiv:'gingen'},
+        {person:'ihr', indikativ:'geht', konjunktiv:'ginget'},        
+        {person:'sie', indikativ:'gehen', konjunktiv:'gingen'}      
+  ];  
+})
+
+.controller('GrammarAdjektivCtrl', function($scope, $stateParams, $rootScope, $controller) {
+  $scope.dash = {};
+
+  $scope.regularContainer = [
+        {positiv:'lieb', komparativ:'lieber', superlativ:'am liebsten'},
+        {positiv:'schnell', komparativ:'schneller', superlativ:'am schnellsten'},
+        {positiv:'einsam', komparativ:'einsamer', superlativ:'am einsamsten'}
+  ];
+
+  $scope.irregularContainer = [
+        {positiv:'gut', komparativ:'besser', superlativ:'am besten'},
+        {positiv:'viel', komparativ:'mehr', superlativ:'am meisten'},
+        {positiv:'gerne', komparativ:'lieber', superlativ:'am liebsten'}
+  ];  
 })
 
 .controller('DashStuddetailCtrl', function($scope ,$stateParams) {
