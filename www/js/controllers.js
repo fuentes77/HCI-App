@@ -45,12 +45,55 @@ angular.module('starter.controllers', [])
   $scope.hideView("student");
 })
 
-
 .controller('DashStudCtrl', function($scope, $stateParams, $rootScope, $controller) {
   $scope.dash = {};
   $scope.hideView("prof");
 })
 
+.controller('VokabelCtrl', function($scope, $stateParams, $rootScope, $controller) {
+  $scope.dash = {};
+
+  $scope.smallTalkContainer = [
+        {english:'How are you?',german:'Wie geht es dir?'},
+        {english:'What is your name?',german:'Wie heisst du?'},
+        {english:'My name is ...',german:'Ich heisse ...'},
+        {english:'What time is it?',german:'Wie spät ist es?'}
+  ];
+
+  $scope.animalContainer = [
+        {english:'dog',german:'Hund'},
+        {english:'cat',german:'Katze'},
+        {english:'mouse',german:'Maus'},
+        {english:'elephant',german:'Elefant'}
+  ];
+
+  $scope.smallTalk = false;   
+  $scope.animals = false;
+  $scope.arrowSmallTalk = "ion-chevron-right"; 
+  $scope.arrowAnimal = "ion-chevron-right"; 
+  
+  $scope.changeArrow = function (section, value) {
+    switch (section) {
+      case "smallTalk": {
+        if (value) {
+          $scope.arrowSmallTalk = "ion-chevron-down";}
+        else {
+          $scope.arrowSmallTalk = "ion-chevron-right";
+        } 
+        break;
+      }
+      case "animals": {
+        if (value) {
+          $scope.arrowAnimal = "ion-chevron-down";}
+        else {
+          $scope.arrowAnimal = "ion-chevron-right";
+        } 
+        break;
+      }
+    }
+
+  }; 
+})
 
 .controller('DashStuddetailCtrl', function($scope ,$stateParams) {
   console.log("hola")

@@ -1,0 +1,51 @@
+<ion-view view-title="Vokabeln">
+
+  <ion-content class="padding">
+
+    <p style="margin-top: 100px;" </p>
+
+    <center><img src="img/teaser_lexikon.jpg"/></center>
+
+    <p style="margin-top: 100px;" </p>
+
+    <!-- small talk section -->
+    <a class="button icon-left {{arrowSmallTalk}} button-calm" ng-click="smallTalk = !smallTalk; changeArrow('smallTalk', smallTalk)">Small Talk</a>
+
+    <div class = "row" ng-if="smallTalk">
+
+      <div class = "col">
+        <div class="list">
+          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in smallTalkContainer">{{x.english}}</div>
+        </div>
+      </div>
+
+      <div class = "col">
+        <div class="list">
+          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in smallTalkContainer">{{x.german}}</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- animals section -->
+    <a class="button icon-left {{arrowAnimal}} button-calm" ng-click="animals = !animals; changeArrow('animals', animals)">Animals</a>
+
+    <div class = "row" ng-if="animals">
+
+      <div class = "col">
+        <div class="list">
+          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in animalContainer">{{x.english}}</div>
+        </div>
+      </div>
+
+      <div class = "col">
+        <div class="list">
+          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in animalContainer">{{x.german}}</div>
+        </div>
+      </div>
+
+    </div>    
+
+  </ion-content>
+
+</ion-view>
