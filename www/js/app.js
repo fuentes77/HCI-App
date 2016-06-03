@@ -128,7 +128,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         controller: 'VokabelCtrl'
       }
     }
-  })   
+  })
 
   .state('tab.musik', {
     url: '/musik',
@@ -160,6 +160,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   })    
 
+  .state('tab.grammarHomeProf', {
+    url: '/grammarHomeProf',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/tab-grammatik-Prof.html',
+        controller: 'GrammarHomeProfCtrl'
+      }
+    }
+  })      
+
   .state('tab.grammarNoun', {
     url: '/grammarNoun',
     views: {
@@ -169,6 +179,36 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     }
   })    
+
+  .state('tab.grammarNounProf', {
+    url: '/grammarNounProf',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/grammarNoun.html',
+        controller: 'GrammarNounCtrl'
+      }
+    }
+  })     
+
+  .state('tab.grammarVerbProf', {
+    url: '/grammarVerbProf',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/grammarVerb.html',
+        controller: 'GrammarNounCtrl'
+      }
+    }
+  })      
+  
+  .state('tab.grammarAdjektivProf', {
+    url: '/grammarAdjektivProf',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/grammarAdjektiv.html',
+        controller: 'GrammarNounCtrl'
+      }
+    }
+  })      
 
   .state('tab.grammarVerb', {
     url: '/grammarVerb',

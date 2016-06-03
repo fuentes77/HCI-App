@@ -20,6 +20,9 @@
           	<div class="item"><b>Fall</b></div>	        
 	          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in maskulinContainer">{{x.case}}</div>
 	        </div>
+          <div ng-if="checkState()" class="item item-input" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}">
+            <input type="text" ng-model="newWordM.case" placeholder="Case">
+          </div> 	  	        
 	      </div>
 
 	      <div class = "col">
@@ -27,13 +30,27 @@
             <div class="item"><b>Singular</b></div>
 	          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in maskulinContainer">{{x.singular}}</div>
 	        </div>
+          <div ng-if="checkState()" class="item item-input" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}">
+            <input type="text" ng-model="newWordM.singular" placeholder="Singular">
+          </div>  	        
 	      </div>
 
 	      <div class = "col">
 	        <div class="list">
 	          <div class="item"><b>Plural</b></div>
-	          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in maskulinContainer">{{x.plural}}</div>
+	          <div class="item item-button-right" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in maskulinContainer">
+	          	{{x.plural}}
+	            <button ng-if="checkState()" class="button button-positive" ng-click="maskulinContainer.splice($index, 1);">
+	              <i class="icon ion-trash-a"></i>
+	            </button>	 	          	
+	          </div>
 	        </div>
+          <div ng-if="checkState()" class="item item-input item-button-right">
+            <input type="text" ng-model="newWordM.plural" placeholder="Plural">
+            <button class="button button-positive" ng-click="addNewWord('maskulin');">
+              <i class="icon ion-ios-plus-empty"></i>
+            </button>
+          </div>  	        
 	      </div>
 
 	    </div>	
@@ -50,6 +67,9 @@
           	<div class="item"><b>Fall</b></div>	        
 	          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in femininContainer">{{x.case}}</div>
 	        </div>
+          <div ng-if="checkState()" class="item item-input" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}">
+            <input type="text" ng-model="newWordF.case" placeholder="Case">
+          </div> 	        
 	      </div>
 
 	      <div class = "col">
@@ -57,13 +77,27 @@
             <div class="item"><b>Singular</b></div>
 	          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in femininContainer">{{x.singular}}</div>
 	        </div>
+          <div ng-if="checkState()" class="item item-input" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}">
+            <input type="text" ng-model="newWordF.singular" placeholder="Singular">
+          </div>  	        
 	      </div>
 
 	      <div class = "col">
 	        <div class="list">
 	          <div class="item"><b>Plural</b></div>
-	          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in femininContainer">{{x.plural}}</div>
-	        </div>
+	          <div class="item item-button-right" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in femininContainer">
+	          	{{x.plural}}
+	            <button ng-if="checkState()" class="button button-positive" ng-click="femininContainer.splice($index, 1);">
+	              <i class="icon ion-trash-a"></i>
+	            </button>	          	
+	          </div>
+	        </div>	          
+          <div ng-if="checkState()" class="item item-input item-button-right">
+            <input type="text" ng-model="newWordF.plural" placeholder="Plural">
+            <button class="button button-positive" ng-click="addNewWord('feminin');">
+              <i class="icon ion-ios-plus-empty"></i>
+            </button>
+          </div>  	          
 	      </div>
 
 	    </div>			  
@@ -80,6 +114,9 @@
           	<div class="item"><b>Fall</b></div>	        
 	          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in neutrumContainer">{{x.case}}</div>
 	        </div>
+          <div ng-if="checkState()" class="item item-input" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}">
+            <input type="text" ng-model="newWordN.case" placeholder="Case">
+          </div>   	        
 	      </div>
 
 	      <div class = "col">
@@ -87,13 +124,27 @@
             <div class="item"><b>Singular</b></div>
 	          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in neutrumContainer">{{x.singular}}</div>
 	        </div>
+          <div ng-if="checkState()" class="item item-input" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}">
+            <input type="text" ng-model="newWordN.singular" placeholder="Singular">
+          </div>  	        
 	      </div>
 
 	      <div class = "col">
 	        <div class="list">
 	          <div class="item"><b>Plural</b></div>
-	          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in neutrumContainer">{{x.plural}}</div>
+	          <div class="item item-button-right" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in neutrumContainer">
+	          	{{x.plural}}
+	            <button ng-if="checkState()" class="button button-positive" ng-click="neutrumContainer.splice($index, 1);">
+	              <i class="icon ion-trash-a"></i>
+	            </button>
+	          </div>
 	        </div>
+          <div ng-if="checkState()" class="item item-input item-button-right">
+            <input type="text" ng-model="newWordN.plural" placeholder="Plural">
+            <button class="button button-positive" ng-click="addNewWord('neutrum');">
+              <i class="icon ion-ios-plus-empty"></i>
+            </button>
+          </div>  	        
 	      </div>
 
 	    </div>			    

@@ -165,11 +165,19 @@ angular.module('starter.controllers', [])
 
 .controller('GrammarHomeCtrl', function($scope, $stateParams, $rootScope, $controller) {
   $scope.dash = {};
+
 })
 
 
 
-.controller('GrammarNounCtrl', function($scope, $stateParams, $rootScope, $controller) {
+.controller('GrammarHomeProfCtrl', function($scope, $stateParams, $rootScope, $controller) {
+  $scope.dash = {};
+    
+})
+
+
+
+.controller('GrammarNounCtrl', function($scope, $stateParams, $rootScope, $controller, $ionicHistory) {
   $scope.dash = {};
 
   $scope.maskulinContainer = [
@@ -191,7 +199,69 @@ angular.module('starter.controllers', [])
         {case:'Genitiv', singular:'des Kindes', plural:'der Kinder'},
         {case:'Dativ', singular:'dem Kind', plural:'den Kindern'},
         {case:'Akkusativ', singular:'das Kind', plural:'die Kinder'}        
-  ];    
+  ];  
+
+  $scope.checkState = function() {
+    console.log($ionicHistory.currentStateName());
+    if ($ionicHistory.currentStateName() == 'tab.grammarNounProf') {
+      return true;
+    }
+  }; 
+
+  $scope.newWordM = {case:'', singular:'', plural:''};
+  $scope.newWordF = {case:'', singular:'', plural:''};
+  $scope.newWordN = {case:'', singular:'', plural:''};  
+
+  $scope.addNewWord = function (section) {
+    // var item = {english:$scope.newWordST.english, german:$scope.newWordST.german};
+    switch (section) {
+      case "maskulin": {
+        var item = {case:$scope.newWordM.case, singular:$scope.newWordM.singular, plural:$scope.newWordM.plural};
+        $scope.maskulinContainer.push(item);
+        $scope.newWordM = {case:'', singular:'', plural:''};
+        break;
+      }
+      case "feminin": {
+        var item = {case:$scope.newWordF.case, singular:$scope.newWordF.singular, plural:$scope.newWordF.plural};
+        $scope.femininContainer.push(item);
+        $scope.newWordF = {case:'', singular:'', plural:''};
+        break;
+      }
+      case "neutrum": {
+        var item = {case:$scope.newWordN.case, singular:$scope.newWordN.singular, plural:$scope.newWordN.plural};
+        $scope.neutrumContainer.push(item);
+        $scope.newWordN = {case:'', singular:'', plural:''};  
+        break;
+      }      
+    }
+  };     
+})
+
+
+
+.controller('GrammarNounProfCtrl', function($scope, $stateParams, $rootScope, $controller) {
+  $scope.dash = {};
+
+  // $scope.maskulinContainer = [
+  //       {case:'Nominativ', singular:'der Mann', plural:'die Männer'},
+  //       {case:'Genitiv', singular:'des Mannes', plural:'der Männer'},
+  //       {case:'Dativ', singular:'dem Mann', plural:'den Männern'},
+  //       {case:'Akkusativ', singular:'den Mann', plural:'die Männer'}
+  // ];
+
+  // $scope.femininContainer = [
+  //       {case:'Nominativ', singular:'die Frau', plural:'die Frauen'},
+  //       {case:'Genitiv', singular:'der Frau', plural:'der Frauen'},
+  //       {case:'Dativ', singular:'der Frau', plural:'den Frauen'},
+  //       {case:'Akkusativ', singular:'die Frau', plural:'die Frauen'}        
+  // ];  
+
+  // $scope.neutrumContainer = [
+  //       {case:'Nominativ', singular:'das Kind', plural:'die Kinder'},
+  //       {case:'Genitiv', singular:'des Kindes', plural:'der Kinder'},
+  //       {case:'Dativ', singular:'dem Kind', plural:'den Kindern'},
+  //       {case:'Akkusativ', singular:'das Kind', plural:'die Kinder'}        
+  // ];    
 })
 
 
