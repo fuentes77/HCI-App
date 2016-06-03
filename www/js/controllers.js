@@ -115,16 +115,12 @@ angular.module('starter.controllers', [])
     switch (section) {
       case "smallTalk": {
         var item = {english:$scope.newWordST.english, german:$scope.newWordST.german};
-        console.log($scope.newWordST.english);
-        console.log('hier');
         $scope.smallTalkContainer.push(item);
         $scope.newWordST = {english:'', german:''};
         break;
       }
       case "animals": {
         var item = {english:$scope.newWordA.english, german:$scope.newWordA.german};
-        console.log($scope.newWordA.english);
-        console.log('hier');
         $scope.animalContainer.push(item);
         $scope.newWordA = {english:'', german:''};
         break;
