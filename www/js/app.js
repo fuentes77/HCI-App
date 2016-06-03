@@ -140,6 +140,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   })  
 
+  .state('tab.musikProf', {
+    url: '/musikProf',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/musikProf.html',
+        controller: 'MusikCtrl'
+      }
+    }
+  })    
+
   .state('tab.video', {
     url: '/video',
     views: {
@@ -149,6 +159,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     }
   })   
+
+  .state('tab.videoProf', {
+    url: '/videoProf',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/videoProf.html',
+        controller: 'VideoCtrl'
+      }
+    }
+  })
 
   .state('tab.grammarHome', {
     url: '/grammarHome',
