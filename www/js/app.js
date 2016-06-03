@@ -101,7 +101,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   })
 
   .state('tab.dashSchueler', {
-    url: '/dashSchueler/:dashSchuelerId',
+    url: '/dashSchueler',
     views: {
       'tab-dashSchueler': {
         templateUrl: 'templates/tab-dashSchueler.html',
