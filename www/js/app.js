@@ -120,6 +120,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   }) 
 
+  .state('tab.vokabelnProf', {
+    url: '/vokabelnProf',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/vokabeltrainer.html',
+        controller: 'VokabelCtrl'
+      }
+    }
+  })   
+
   .state('tab.musik', {
     url: '/musik',
     views: {

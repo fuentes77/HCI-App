@@ -15,15 +15,31 @@
 
       <div class = "col">
         <div class="list">
-          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in smallTalkContainer">{{x.english}}</div>
+          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in smallTalkContainer">
+            {{x.english}}
+          </div>
+          <div ng-if="checkState()" class="item item-input" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}">
+            <input type="text" ng-model="newWordST.english" placeholder="English">
+          </div>
         </div>
       </div>
 
       <div class = "col">
         <div class="list">
-          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in smallTalkContainer">{{x.german}}</div>
+          <div class="item item-button-right" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in smallTalkContainer">
+            {{x.german}}
+            <button ng-if="checkState()" class="button button-positive" ng-click="smallTalkContainer.splice($index, 1);">
+              <i class="icon ion-trash-a"></i>
+            </button>            
+          </div>
+          <div ng-if="checkState()" class="item item-input item-button-right">
+            <input type="text" ng-model="newWordST.german" placeholder="German">
+            <button class="button button-positive" ng-click="addNewWord('smallTalk');">
+              <i class="icon ion-ios-plus-empty"></i>
+            </button>
+          </div>          
         </div>
-      </div>
+      </div>  
 
     </div>
 
@@ -34,17 +50,33 @@
 
       <div class = "col">
         <div class="list">
-          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in animalContainer">{{x.english}}</div>
+          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in animalContainer">
+            {{x.english}}
+          </div>
+          <div ng-if="checkState()" class="item item-input" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}">
+            <input type="text" ng-model="newWordA.english" placeholder="English">
+          </div>          
         </div>
       </div>
 
       <div class = "col">
         <div class="list">
-          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in animalContainer">{{x.german}}</div>
+          <div class="item item-button-right" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in animalContainer">
+            {{x.german}}
+            <button ng-if="checkState()" class="button button-positive" ng-click="animalContainer.splice($index, 1);">
+              <i class="icon ion-trash-a"></i>
+            </button>
+          </div>
+          <div ng-if="checkState()" class="item item-input item-button-right">
+            <input type="text" ng-model="newWordA.german" placeholder="German">
+            <button class="button button-positive" ng-click="addNewWord('animals');">
+              <i class="icon ion-ios-plus-empty"></i>
+            </button>
+          </div>             
         </div>
-      </div>
+      </div>  
 
-    </div>    
+    </div>
 
   </ion-content>
 

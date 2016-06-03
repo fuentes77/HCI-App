@@ -23,6 +23,8 @@ angular.module('starter.controllers', [])
   }
 })
 
+
+
 .controller('AbstractCtrl', function($scope) {
   $scope.dash = {};
   $scope.prof = "ng-show";
@@ -40,17 +42,23 @@ angular.module('starter.controllers', [])
   };
 })
 
+
+
 .controller('DashCtrl', function($scope, $stateParams) {
   $scope.dash = {};
   $scope.hideView("student");
 })
+
+
 
 .controller('DashStudCtrl', function($scope, $stateParams, $rootScope, $controller) {
   $scope.dash = {};
   $scope.hideView("prof");
 })
 
-.controller('VokabelCtrl', function($scope, $stateParams, $rootScope, $controller) {
+
+
+.controller('VokabelCtrl', function($scope, $stateParams, $rootScope, $controller, $ionicHistory) {
   $scope.dash = {};
 
   $scope.smallTalkContainer = [
@@ -91,9 +99,41 @@ angular.module('starter.controllers', [])
         break;
       }
     }
+  };
 
-  }; 
+  $scope.checkState = function() {
+    if ($ionicHistory.currentStateName() == 'tab.vokabelnProf') {
+      return true;
+    }
+  };
+
+  $scope.newWordST = {english:'', german:''};
+  $scope.newWordA = {english:'', german:''};
+
+  $scope.addNewWord = function (section) {
+    // var item = {english:$scope.newWordST.english, german:$scope.newWordST.german};
+    switch (section) {
+      case "smallTalk": {
+        var item = {english:$scope.newWordST.english, german:$scope.newWordST.german};
+        console.log($scope.newWordST.english);
+        console.log('hier');
+        $scope.smallTalkContainer.push(item);
+        $scope.newWordST = {english:'', german:''};
+        break;
+      }
+      case "animals": {
+        var item = {english:$scope.newWordA.english, german:$scope.newWordA.german};
+        console.log($scope.newWordA.english);
+        console.log('hier');
+        $scope.animalContainer.push(item);
+        $scope.newWordA = {english:'', german:''};
+        break;
+      }
+    }
+  };
 })
+
+
 
 .controller('MusikCtrl', function($scope, $stateParams, $rootScope, $controller) {
   $scope.dash = {};
@@ -109,6 +149,8 @@ angular.module('starter.controllers', [])
   ];  
 })
 
+
+
 .controller('VideoCtrl', function($scope, $stateParams, $rootScope, $controller) {
   $scope.dash = {};
 
@@ -123,9 +165,13 @@ angular.module('starter.controllers', [])
   ];    
 })
 
+
+
 .controller('GrammarHomeCtrl', function($scope, $stateParams, $rootScope, $controller) {
   $scope.dash = {};
 })
+
+
 
 .controller('GrammarNounCtrl', function($scope, $stateParams, $rootScope, $controller) {
   $scope.dash = {};
@@ -152,6 +198,8 @@ angular.module('starter.controllers', [])
   ];    
 })
 
+
+
 .controller('GrammarVerbCtrl', function($scope, $stateParams, $rootScope, $controller) {
   $scope.dash = {};
 
@@ -174,6 +222,8 @@ angular.module('starter.controllers', [])
   ];  
 })
 
+
+
 .controller('GrammarAdjektivCtrl', function($scope, $stateParams, $rootScope, $controller) {
   $scope.dash = {};
 
@@ -190,9 +240,13 @@ angular.module('starter.controllers', [])
   ];  
 })
 
+
+
 .controller('DashStuddetailCtrl', function($scope ,$stateParams) {
   console.log("hola")
 })
+
+
 
 .controller('tabCtrl', function($scope) {
   $scope.dash = {};
@@ -203,7 +257,6 @@ angular.module('starter.controllers', [])
 
 
 .controller('ChatsCtrl', function($scope, Chats) {
-
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -219,9 +272,13 @@ angular.module('starter.controllers', [])
   };
 })
 
+
+
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
   $scope.chat = Chats.get($stateParams.chatId);
 })
+
+
 
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
