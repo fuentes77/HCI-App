@@ -13,6 +13,12 @@ Hallo zusammen. Wichtige Hinweise zur korrekter Ausfuehrung des Projektes.
 - git push
 
 
+## Plug-ins zu installieren
+
+ Apache Globalization Plugin for Cordova:
+    cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-globalization.git
+    
+
 ## Mit Emulator testen (davor muss die SDK installiert werden)
 
 - npm install -g cordova
