@@ -147,18 +147,28 @@ angular.module('starter.controllers', [])
 
 
 
-.controller('VideoCtrl', function($scope, $stateParams, $rootScope, $controller) {
+.controller('VideoCtrl', function($scope, $stateParams, $rootScope, $controller, $ionicScrollDelegate, $sce) {
   $scope.dash = {};
 
   $scope.langLearnCont = [
-        {src:'img/lesson1.jpg', name:'Learn German', title:'Lesson 1'},
-        {src:'img/prepositions.jpg', name:'Easy German Grammar', title: 'Prepositions'}
+        {src:'img/lesson1.jpg', name:'Learn German', title:'Lesson 1', link:'https://www.youtube.com/embed/zZAWygYoN30'},
+        {src:'img/prepositions.jpg', name:'Easy German Grammar', title: 'Prepositions', link:'https://www.youtube.com/embed/G3MeDOYgeO4'}
   ];
 
   $scope.entertainCont = [
-        {src:'img/loriot.jpg', name:'Loriot', title:'Das Bild hängt schief'},
-        {src:'img/goethe_institut.png', name:'BBC and Goethe Institute', title:'Susanne - for German learners'}
+        {src:'img/loriot.jpg', name:'Loriot', title:'Das Bild hängt schief', link:'https://www.youtube.com/embed/dq3E0iXRY7o'},
+        {src:'img/kinski.jpg', name:'Klaus Kinski', title:'Wutausbruch am Filmset von Fitzcarraldo', link:'https://www.youtube.com/embed/75ADI9p2wHY'}
   ];    
+
+  $scope.status = false;
+  $scope.address = '';
+
+
+  $scope.statusChg = function(link) {
+    $scope.status = true;
+    $ionicScrollDelegate.scrollTop();
+    $scope.address = $sce.trustAsResourceUrl(link);
+  };
 })
 
 
@@ -213,7 +223,6 @@ angular.module('starter.controllers', [])
   $scope.newWordN = {case:'', singular:'', plural:''};  
 
   $scope.addNewWord = function (section) {
-    // var item = {english:$scope.newWordST.english, german:$scope.newWordST.german};
     switch (section) {
       case "maskulin": {
         var item = {case:$scope.newWordM.case, singular:$scope.newWordM.singular, plural:$scope.newWordM.plural};

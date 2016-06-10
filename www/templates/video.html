@@ -4,7 +4,17 @@
 
     <p style="margin-top: 100px;" </p>
 
-    <center><img src="img/video.png"/></center>
+		<!-- default symbol -->       	
+    <center><img ng-if="!status" src="img/video.png"/></center>
+
+		<!-- videoplayer shown after link selected -->
+    <div id="div1" ng-if="status" class="card">
+        <ion-item>
+            <div class="video-container">
+                <iframe ng-src={{address}} frameborder="0" width="560" height="315"></iframe>
+            </div>
+        </ion-item>
+    </div> 
 
     <p style="margin-top: 100px;" </p>
 
@@ -14,8 +24,8 @@
 		    Language Learning
 		  </div>
 
-	    <a class="item item-thumbnail-left" href="#/tab/video" ng-repeat="x in langLearnCont">
-	      <img src={{x.src}}>
+	    <a class="item item-thumbnail-left" href="#/tab/video" ng-repeat="x in langLearnCont" ng-click="statusChg('{{x.link}}')">
+	      <img ng-src={{x.src}}>
 	      <h2>{{x.name}}</h2>
 	      <p>{{x.title}}</p>
 	    </a>			    
@@ -24,8 +34,8 @@
 		    Entertainment
 		  </div>
 
-	    <a class="item item-thumbnail-left" href="#/tab/video" ng-repeat="x in entertainCont">
-	      <img src={{x.src}}>
+	    <a class="item item-thumbnail-left" href="#/tab/video" ng-repeat="x in entertainCont" ng-click="statusChg('{{x.link}}')">
+	      <img ng-src={{x.src}}>
 	      <h2>{{x.name}}</h2>
 	      <p>{{x.title}}</p>
 	    </a>				    

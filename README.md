@@ -15,9 +15,12 @@ Hallo zusammen. Wichtige Hinweise zur korrekter Ausfuehrung des Projektes.
 
 ## Plug-ins zu installieren
 
- Apache Globalization Plugin for Cordova:
+Apache Globalization Plugin for Cordova:
     cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-globalization.git
-    
+
+Cordova Whitelist:
+	ionic plugin add https://github.com/apache/cordova-plugin-whitelist.git    
+	
 
 ## Mit Emulator testen (davor muss die SDK installiert werden)
 
