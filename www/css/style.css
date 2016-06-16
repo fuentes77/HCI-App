@@ -32,4 +32,11 @@
     height: 100%;
 }
 
+.quiz {
+  height:54.5px;
+  align:left;
+  /*width: 8%;*/
+  /*display: inline-block;*/
+}
+
 </style>

@@ -317,6 +317,47 @@ angular.module('starter.controllers', [])
 
 
 
+.controller('CourseCtrl', function($scope, $stateParams, $rootScope, $controller, $ionicHistory) {
+  $scope.dash = {};
+
+  $scope.nounContainer = [
+        {case:'Nominativ', sgCrt:'der Mann', sgWr1:'das Mann', sgWr2:'die Mann', 
+          plCrt:'die Männer', plWr1:'den Männern', plWr2:'der Männer'},
+        {case:'Genitiv', sgCrt:'der Frau', sgWr1:'das Frau', sgWr2:'die Frau', 
+          plCrt:'der Frauen', plWr1:'den Frauen', plWr2:'die Frauen'},
+        {case:'Dativ', sgCrt:'dem Elefanten', sgWr1:'der Elefant', sgWr2:'die Elefanten', 
+          plCrt:'den Elefanten', plWr1:'dem Elefanten', plWr2:'die Elefanten'},
+        {case:'Akkusativ', sgCrt:'das Haus', sgWr1:'der Haus', sgWr2:'die Haus', 
+          plCrt:'die Häuser', plWr1:'dem Haus', plWr2:'den Häusern'}
+  ];
+
+  $scope.vocabContainer = [
+        {en:'dog', gerCrt:'Hund', gerWr1:'Katze', gerWr2:'Maus'},
+        {en:'cat', gerCrt:'Katze', gerWr1:'Giraffe', gerWr2:'Schlange'},
+        {en:'street', gerCrt:'Strasse', gerWr1:'Baum', gerWr2:'Haus'},
+        {en:'water', gerCrt:'Wasser', gerWr1:'Fluss', gerWr2:'Strudel'},
+
+  ];  
+
+  $scope.checkState = function() {
+    console.log($ionicHistory.currentStateName());
+    if ($ionicHistory.currentStateName() == 'tab.courseProf') {
+      return true;
+    }
+  }; 
+
+  $scope.newWord = {case:'', singular:'', plural:''};
+
+  $scope.addNewWord = function () {
+    var item = {case:$scope.newWord.case, singular:$scope.newWord.singular, plural:$scope.newWord.plural};
+    $scope.nounContainer.push(item);
+    $scope.newWord = {case:'', singular:'', plural:''};
+  };    
+
+})
+
+
+
 .controller('DashStuddetailCtrl', function($scope ,$stateParams) {
   console.log("hola")
 })

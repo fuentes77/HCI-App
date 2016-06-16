@@ -248,7 +248,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         controller: 'GrammarAdjektivCtrl'
       }
     }
-  })       
+  })    
+
+  .state('tab.course', {
+    url: '/course',
+    views: {
+      'tab-dashSchueler': {
+        templateUrl: 'templates/course.html',
+        controller: 'CourseCtrl'
+      }
+    }
+  })        
 
   .state('tab.chats', {
       url: '/chats',

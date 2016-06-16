@@ -1,0 +1,211 @@
+<ion-view view-title="Grammatik - Nomen">
+
+  <ion-content class="padding">
+
+    <p style="margin-top: 100px;" </p>
+
+    <!-- <center><img src="img/musical_note.jpg"/></center> -->
+
+		<div class="list">  
+
+	    <!-- grammar section -->
+		  <div class="item item-divider item-positive">
+		    Grammar
+		  </div>		
+
+	    <div class = "row">
+
+	      <div class = "col">
+	        <div class="list">
+          	<div class="item"><b>Fall</b></div>	        
+	          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in nounContainer">{{x.case}}</div>
+	        </div>
+          <div ng-if="checkState()" class="item item-input" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}">
+            <input type="text" ng-model="newWord.case" placeholder="Case">
+          </div>   	        
+	      </div>
+
+	      <div class = "col">
+	        <div class="list">
+            <div class="item"><b>Singular</b></div>
+	          <div class="quiz item item-input item-select" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in nounContainer">
+
+						  <!-- <label class="item item-input item-select"> -->
+						    <!-- <div class="input-label">
+						      {{val}}
+						    </div> -->
+					    <select ng-model="val">
+					      <option selected>{{x.sgCrt}}</option>
+					      <option>{{x.sgWr1}}</option>
+					      <option>{{x.sgWr2}}</option>
+					    </select>
+						  <!-- </label> -->
+
+	          	<!-- {{x.sgCrt}} -->
+
+	          </div>
+	        </div>
+          <div ng-if="checkState()" class="item item-input" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}">
+            <input type="text" ng-model="newWord.singular" placeholder="Singular">
+          </div>  	        
+	      </div>
+
+	      <div class = "col">
+	        <div class="list">
+	          <div class="item"><b>Plural</b></div>
+	          <div class="quiz item item-input item-select item item-button-right" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in nounContainer">
+	          	<!-- {{x.plCrt}} -->
+
+					    <select ng-model="val">
+					      <option selected>{{x.plCrt}}</option>
+					      <option>{{x.plWr1}}</option>
+					      <option>{{x.plWr2}}</option>
+					    </select>
+
+	            <button ng-if="checkState()" class="button button-positive" ng-click="nounContainer.splice($index, 1);">
+	              <i class="icon ion-trash-a"></i>
+	            </button>
+	          </div>
+	        </div>
+          <div ng-if="checkState()" class="item item-input item-button-right">
+            <input type="text" ng-model="newWord.plural" placeholder="Plural">
+            <button class="button button-positive" ng-click="addNewWord();">
+              <i class="icon ion-ios-plus-empty"></i>
+            </button>
+          </div>  	        
+	      </div>
+
+	    </div>		
+
+			<div class = "row">
+
+	      <div class = "col">
+	        <div class="list">        
+						<button class="button button-small button-dark" ng-click="show=true">
+						  Evaluate!
+						</button>
+						<h2 ng-show="show" color="red"}"><font color="red">Leider hast du noch nicht alles richtig :(</font></h2>
+	        </div>        
+	      </div>
+
+	    </div>
+
+	    <!-- vocabulary section -->
+		  <div class="item item-divider item-positive">
+		    Vocabulary
+		  </div>			
+
+			<div class = "row">
+
+	      <div class = "col">
+	        <div class="list">
+          	<div class="item"><b>English</b></div>	        
+	          <div class="item" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in vocabContainer">{{x.en}}</div>
+	        </div>
+          <div ng-if="checkState()" class="item item-input" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}">
+            <input type="text" ng-model="newWord.case" placeholder="Case">
+          </div>   	        
+	      </div>
+
+	      <div class = "col">
+	        <div class="list">
+            <div class="item"><b>German</b></div>
+	          <div class="quiz item item-input item-select" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}" ng-repeat="x in vocabContainer">
+
+						  <!-- <label class="item item-input item-select"> -->
+						    <!-- <div class="input-label">
+						      {{val}}
+						    </div> -->
+					    <select ng-model="val">
+					      <option selected>{{x.gerCrt}}</option>
+					      <option>{{x.gerWr1}}</option>
+					      <option>{{x.gerWr2}}</option>
+					    </select>
+						  <!-- </label> -->
+
+	          	<!-- {{x.sgCrt}} -->
+
+	          </div>
+	        </div>
+          <div ng-if="checkState()" class="item item-input" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}">
+            <input type="text" ng-model="newWord.singular" placeholder="Singular">
+          </div>  	        
+	      </div>
+
+	    </div>		
+
+	      <div class = "col">
+	        <div class="list">        
+						<button class="button button-small button-dark" ng-click="show2=true">
+						  Evaluate!
+						</button>
+						<h2 ng-show="show2" color="red"}"><font color="green">Super, du hast alles richtig :)</font></h2>
+	        </div>        
+	      </div>
+
+	    </div>	    
+
+	    <!-- video section -->
+		  <div class="item item-divider item-positive">
+		    Video
+		  </div>	
+
+	    <div id="div1" class="card">
+	        <ion-item>
+	            <div class="video-container">
+	                <iframe ng-src="https://www.youtube.com/embed/75ADI9p2wHY" frameborder="0" width="560" height="315"></iframe>
+	            </div>
+	        </ion-item>
+	    </div>   
+
+	    <!-- video questions -->
+			<div class = "row">
+
+	      <div class = "col">
+	        <div class="list">
+
+          	<div class="item"><b>Wo spielt das Video?</b></div>	 
+						<ion-list>
+						  <ion-checkbox ng-model="wo.crt">Im Dschungel</ion-checkbox>
+						  <ion-checkbox ng-model="wo.wr1">In der Grossstadt</ion-checkbox>
+						  <ion-checkbox ng-model="wo.wr2">Im Schwimmbad</ion-checkbox>
+						</ion-list>	    
+
+          	<div class="item"><b>Worum geht es im Video?</b></div>	 
+						<ion-list>
+						  <ion-checkbox ng-model="worum.crt">Einen Streit</ion-checkbox>
+						  <ion-checkbox ng-model="worum.wr1">Eine Liebesszene</ion-checkbox>
+						  <ion-checkbox ng-model="worum.wr2">Ein Musikvideo</ion-checkbox>
+						</ion-list>	  
+
+          	<div class="item"><b>Wie ist Kinski gelaunt?</b></div>	 
+						<ion-list>
+						  <ion-checkbox ng-model="wie.crt">Er ist in Rage</ion-checkbox>
+						  <ion-checkbox ng-model="wie.wr1">Er ist entspannt</ion-checkbox>
+						  <ion-checkbox ng-model="wie.wr2">Er ist fröhlich</ion-checkbox>
+						</ion-list>	 						
+
+	        </div>
+          <div ng-if="checkState()" class="item item-input" ng-style="{'background-color': $index % 2 ?  '#f1f1f1': 'white'}">
+            <input type="text" ng-model="newWord.case" placeholder="Case">
+          </div>   	      
+	      </div>
+
+	    </div>		
+
+	      <div class = "col">
+	        <div class="list">        
+						<button class="button button-small button-dark" ng-click="show3=true">
+						  Evaluate!
+						</button>
+						<h2 ng-show="show3" color="red"}"><font color="green">Super, du hast alles richtig :)</font></h2>
+	        </div>        
+	      </div>
+
+	    </div>	    	    
+
+		</div>
+
+  </ion-content>
+
+</ion-view>
